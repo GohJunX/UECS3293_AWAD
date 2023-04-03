@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$user->name}}'s Profile</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <script src="{{asset('js/app.js')}}" defer></script>
 </head>
 <body>
     <div class="container rounded bg-white mt-5 mb-5">
@@ -15,20 +16,45 @@
             <div class="col-md-5 border-right">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">My Profile</h4>
+                        <h4 class="text-right">Profile Settings</h4>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                        <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value={{$user->name}} @readonly(true)></div>
+                        <div class="col-md-6"><label class="labels">Email</label><input type="text" class="form-control" value={{$user->email}} placeholder="email with @" @readonly(true)></div>
                     </div>
-                    <div class="row mt-3">
-                         <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" >Edit Profile</button></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center experience"><span>Show Order History</span></div><br>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Total Amount</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach ($orders as $order)
+                                <tr>
+                                    <th scope="row">{{$loop->iteration}}</th>
+                                    <td><a href="">{{$order->id}}</a></td>
+                                    <td>{{$order->created_at}}</td>
+                                    <td>${{$order->total_amount}}</td>
+                                    <td>{{$order->order_status}}</td>
+                                </tr>
+                                @endforeach
+                                <!-- more rows here -->
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                        <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                    </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></div>
+                    
                 </div>
             </div>
         </div>

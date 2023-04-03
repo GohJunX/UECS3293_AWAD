@@ -18,7 +18,6 @@ return new class extends Migration
             $table->double('payment_amount',8,2);
             $table->enum('payment_methods',['cash','card']);
             $table->enum('payment_status',['pending','complete'])->default('pending');
-            $table->unsignedBigInteger('order_id');
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
