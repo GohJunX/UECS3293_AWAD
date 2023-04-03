@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('product_description');
             $table->integer('product_quantity');
             $table->double('price',8,2);
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
             
         });
