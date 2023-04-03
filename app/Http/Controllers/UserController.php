@@ -12,7 +12,9 @@ class UserController extends Controller
     public function getProfile($id){
         $user = User::find($id);
         $orders = Order::where('user_id', $user->id)->get();
-        return view('profile', compact('user', 'orders'));
+        if($orders->count()==0)
+            $orders=null;
+        return view('profile/'.$user->id, compact('user', 'orders'));
     }
     
 }

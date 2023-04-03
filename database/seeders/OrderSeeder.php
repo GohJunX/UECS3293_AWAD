@@ -21,7 +21,9 @@ class OrderSeeder extends Seeder
         for($i=0;$i<10;$i++){
             Order::create([
                 'order_status'=>$faker->order_status,
-                'pickup_delivery_date_time'=>$faker->dateTimeBetween('now','+1 month'), 
+                'pickup_delivery_date_time'=>$faker->dateTimeBetween('now','+1 month'),
+                'user_id'=>$faker->numberBetween(1,9),
+                'total_amount'=>$faker->randomFloat(2,10,100),
             ]);
         }
     }
