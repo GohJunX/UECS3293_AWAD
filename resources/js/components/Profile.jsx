@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-export default function Profile() {
+function EditProfile() {
   const [editable, setEditable] = useState(false);
 
   const handleEditClick = () => {

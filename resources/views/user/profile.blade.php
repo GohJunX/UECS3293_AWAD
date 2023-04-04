@@ -19,8 +19,8 @@
                         <h4 class="text-right">Profile Settings</h4>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value={{$user->name}} @readonly(true)></div>
-                        <div class="col-md-6"><label class="labels">Email</label><input type="text" class="form-control" value={{$user->email}} placeholder="email with @" @readonly(true)></div>
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value={{$user->name}} readonly></div>
+                        <div class="col-md-6"><label class="labels">Email</label><input type="text" class="form-control" value={{$user->email}} placeholder="email with @" readonly></div>
                     </div>
                     <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" >Edit Profile</button></div>
                 </div>
@@ -40,19 +40,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @if (!empty($orders))
                                 @foreach ($orders as $order)
                                 <tr>
-                                    <th scope="row">{{$loop->iteration}}</th>
+                                    <th scope="row">{{$loop->iteration}}</th> 
                                     <td><a href="">{{$order->id}}</a></td>
                                     <td>{{$order->created_at}}</td>
                                     <td>${{$order->total_amount}}</td>
                                     <td>{{$order->order_status}}</td>
                                 </tr>
                                 @endforeach
-                                <!-- more rows here -->
+                                @endif
+                                
                             </tbody>
                         </table>
+                        <div class="text-center mt-4"><a href="{{ route('user.history', $user->id) }}">Display All History</a></div>
                     </div>
                     
                 </div>
