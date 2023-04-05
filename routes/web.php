@@ -16,6 +16,6 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 Route::get('profile/{id}', [UserController::class, 'getProfile'])->name('user.profile');
-Route::get('profile/order_history/{id}',[OrderController::class,'getOrders'])->name('user.order_history');
+Route::get('profile/order_history/{id}',[UserController::class,'getOrders'])->name('user.order_history');

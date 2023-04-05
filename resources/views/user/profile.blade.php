@@ -28,6 +28,7 @@
             <div class="col-md-4">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center experience"><span>Show Order History</span></div><br>
+                    @if($orders->count()>0)
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -54,8 +55,15 @@
                                 
                             </tbody>
                         </table>
-                        <div class="text-center mt-4"><a href="{{ route('user.history', $user->id) }}">Display All History</a></div>
+                        <div class="text-center mt-4"><a href="{{ route('user.order_history', $user->id) }}">Display All History</a></div>
                     </div>
+                    
+                    @else
+                    <div class="text-center mt-4">
+                        <h2>No History Yet</h2>
+                        <button><a href="{{route('home')}}" target="_blank" rel="noopener noreferrer">Order NOW</a></button>
+                    </div>
+                    @endif
                     
                 </div>
             </div>
