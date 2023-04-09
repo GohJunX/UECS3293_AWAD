@@ -11,7 +11,7 @@ class CartController extends Controller
     public function showCart()
     {
         // Get the user's shopping cart order
-        $order = Order::with('orderItems.product')->where('order_status', 'pending')->first();
+        $order = Order::with('orderItems.product')->where('status', 'pending')->first();
     
         // If the user has no items in their shopping cart, display an empty cart message
         if (!$order || $order->orderItems->isEmpty()) {
