@@ -9,13 +9,15 @@
     <title>@yield('title') - Admin</title>
 
     <!-- Add the following link to include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('resources/css/app.css') }}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    @csrf
+    <style>
+        .w-5{
+            display: none
+            }
 
-    <!-- Add the following link to include Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- Add the following link to include Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    </style>
 </head>
 <body>
 
@@ -75,6 +77,6 @@
     </div>
 
     <!-- Add the following script to include Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/js/bootstrap.min.js"></scrip>
 </body>
 </html>
