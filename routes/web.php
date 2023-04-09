@@ -1,8 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -23,6 +24,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/cart', [CartController::class, 'showCart']);
+
+
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
 
@@ -42,4 +46,5 @@ Route::get('/admin/orders', [OrderController::class,'index'])->name('admin.order
 Route::get('/admin/orders/{order}', [OrderController::class,'show'])->name('admin.orders.show');
 Route::get('/admin/orders/{order}/edit',[OrderController::class,'edit'])->name('admin.orders.edit');
 Route::put('/admin/orders/{order}/update_status', [OrderController::class,'updateStatus'])->name('admin.orders.update_status');
+
 

@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->enum('order_status',['pending','confirmed','delivered'])->default('pending');
             $table->dateTime('pickup_delivery_date_time');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('payment_id');
+            $table->foreign('payment_id')->references('id')->on('payments');
             $table->timestamps();
         });
     }

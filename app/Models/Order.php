@@ -10,6 +10,20 @@ use App\Models\OrderItem;
 class Order extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'user_id',
+        'payment_id',
+        'order_status',
+        'pickup_delivery_date_time'
+    ];
+
+    public function payment()
+    {
+        return $this->belongsTo(Payment::class);
+    }
+ 
     public function user(){
         return $this->belongsTo(User::class);
     }
