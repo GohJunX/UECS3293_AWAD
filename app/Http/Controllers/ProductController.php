@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
@@ -17,6 +20,11 @@ class ProductController extends Controller
         return view('admin/products', compact('products', 'startIndex'));
     }
 
+    public function show($id)
+    {
+        $product = Product::find($id);
+        return view('product', compact('product'));
+    }
     public function create(){
         $categories= Category::all();
         return view('admin/product-create',compact('categories'));
