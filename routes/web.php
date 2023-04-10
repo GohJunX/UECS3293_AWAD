@@ -37,28 +37,28 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['adminAuthenticate']], function(){
-    Route::get('/dashboard',function(){
-        return view('home');
-    });
+    // Route::get('/dashboard',function(){
+    //     return view('home');
+    // });
     // Admin Dashboard
-Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+Route::get('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
 
 // Products Management
-Route::get('/admin/products', [ProductController::class,'index'] )->name('admin.products.index');
-Route::get('/admin/products/create',[ProductController::class,'create'])->name('admin.products.create');
-Route::post('/admin/products', [ProductController::class,'store'])->name('admin.products.store');
-Route::put('/admin/products/{product}/edit', [ProductController::class,'edit'])->name('admin.products.edit');
-Route::put('/admin/products/{product}', [ProductController::class,'update'])->name('admin.products.update');
-Route::delete('/admin/products/{product}', [ProductController::class,'destroy'])->name('admin.products.destroy');
+Route::get('/products', [ProductController::class,'index'] )->name('admin.products.index');
+Route::get('/products/create',[ProductController::class,'create'])->name('admin.products.create');
+Route::post('/products', [ProductController::class,'store'])->name('admin.products.store');
+Route::put('/products/{product}/edit', [ProductController::class,'edit'])->name('admin.products.edit');
+Route::put('/products/{product}', [ProductController::class,'update'])->name('admin.products.update');
+Route::delete('/products/{product}', [ProductController::class,'destroy'])->name('admin.products.destroy');
 
 // Orders Management
-Route::get('/admin/orders', [OrderController::class,'index'])->name('admin.orders.index');
-Route::get('/admin/orders/{order}', [OrderController::class,'show'])->name('admin.orders.show');
-Route::get('/admin/orders/{order}/edit',[OrderController::class,'edit'])->name('admin.orders.edit');
-Route::put('/admin/orders/{order}/update_status', [OrderController::class,'updateStatus'])->name('admin.orders.update_status');
+Route::get('/orders', [OrderController::class,'index'])->name('admin.orders.index');
+Route::get('/orders/{order}', [OrderController::class,'show'])->name('admin.orders.show');
+Route::get('/orders/{order}/edit',[OrderController::class,'edit'])->name('admin.orders.edit');
+Route::put('/orders/{order}/update_status', [OrderController::class,'updateStatus'])->name('admin.orders.update_status');
 });
 
 

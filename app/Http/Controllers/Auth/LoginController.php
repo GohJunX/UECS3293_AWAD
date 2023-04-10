@@ -61,7 +61,7 @@ class LoginController extends Controller
                     Cookie::queue(Cookie::forget('user'));
                     Cookie::queue(Cookie::forget('userpwd'));
                 }
-        return redirect('/');
+        return redirect('/home');
 
         }
     
