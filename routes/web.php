@@ -15,6 +15,7 @@ use App\Http\Controllers\ProductController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,7 +38,7 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['adminAuthenticate']], function(){
     // Route::get('/dashboard',function(){
@@ -68,7 +69,10 @@ Route::get('/cart', [CartController::class, 'showCart']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
 
-
+Route::view('/home','home');
+Route::view('/menu', 'menu');
+Route::view("/product",'product');
+Route::view("/order",'order');
 
 
 
