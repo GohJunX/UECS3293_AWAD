@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use App\Models\product;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,11 @@ class HomeController extends Controller
         } else {
             return view('home');
         }
+    }
+    public function home()
+    {
+        $data=product::all();
+        return view('home2',['products'=>$data]);
     }
 
 }
