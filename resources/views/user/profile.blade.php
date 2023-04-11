@@ -22,7 +22,11 @@
                         <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value={{$user->name}} readonly></div>
                         <div class="col-md-6"><label class="labels">Email</label><input type="text" class="form-control" value={{$user->email}} placeholder="email with @" readonly></div>
                     </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" >Edit Profile</button></div>
+                    <div class="mt-5 text-center">
+                        <form action="{{route('user.profile.edit',$user->id)}}">
+                        <button class="btn btn-primary profile-button" type="submit" >Edit Profile</button>
+                    </form>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">

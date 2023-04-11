@@ -17,5 +17,7 @@ use App\Http\Controllers\OrderController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
-Route::get('profile/{id}', [UserController::class, 'getProfile'])->name('user.profile');
-Route::get('profile/order_history/{id}',[UserController::class,'getOrders'])->name('user.order_history');
+Route::get('profile/{id}', [UserController::class, 'showProfile'])->name('user.profile');
+Route::get('profile/{id}/editProfile', [UserController::class, 'editProfile'])->name('user.profile.edit');
+Route::put('profile/{id}/updateProfile', [UserController::class, 'updateProfile'])->name('user.profile.update');
+Route::get('profile/{id}/order_history',[UserController::class,'getOrders'])->name('user.order_history');
