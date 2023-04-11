@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <style>
   body {
     display: flex;
@@ -63,3 +66,4 @@
     </tfoot>
   </table>
 </div>
+@endsection

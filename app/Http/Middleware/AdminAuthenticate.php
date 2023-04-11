@@ -16,7 +16,7 @@ class adminAuthenticate extends Middleware
       if(Auth::check() && Auth::user()->role == 'admin'){
         return $next($request);
       }
-      return redirect('/');
+      return redirect('/home');
 
     }
 

@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -12,8 +13,6 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
-
-
 
 
 /*
@@ -31,6 +30,7 @@ Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
+
 });
 
 
@@ -69,10 +69,12 @@ Route::get('/cart', [CartController::class, 'showCart']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
 
-Route::view('/home','home');
+Route::view('/home','home')->name('home');
 Route::view('/menu', 'menu');
 Route::view("/product",'product');
 Route::view("/order",'order');
 
-
-
+Route::get('profile/{id}', [UserController::class, 'showProfile'])->name('user.profile');
+Route::get('profile/{id}/editProfile', [UserController::class, 'editProfile'])->name('user.profile.edit');
+Route::put('profile/{id}/updateProfile', [UserController::class, 'updateProfile'])->name('user.profile.update');
+Route::get('profile/{id}/order_history',[UserController::class,'getOrders'])->name('user.order_history');

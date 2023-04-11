@@ -1,47 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Bakery Website</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+@extends('layouts.app')
+@section('content')
 
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
-    <link rel="stylesheet" href="{{asset('css/home.css')}}">
-
-</head>
 <body>
     
-    <!-- header -->
-
-    <header class="header">
-
-        <a  class="logo"> <i class="fas fa-bread-slice"></i> bakery </a>
-
-        <nav class="navbar">
-            <a href="/home">home</a>
-            <a href="/menu">menu</a>
-            <a href="/product">product</a>
-            <a href="/order">order</a>
-        </nav>
-
-        <div class="icons">
-            <div id="cart-btn" class="fas fa-shopping-cart"></div>
-            <div id="menu-btn" class="fas fa-bars"></div>
-        </div>
-
-    </header>
-
-    <!-- header end -->
-
-
-
     <!-- home -->
-
+   
     <section class="grid" id="grid">
 
         <div class="content">
@@ -382,3 +345,4 @@
     <!-- footer ends -->
 </body>
 </html>
+@endsection

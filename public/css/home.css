@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
 
+.main-content{
+  margin-top:80px;
+}
 :root{
   --primary-color:  #c98d83;
   --secondary : #783b31;

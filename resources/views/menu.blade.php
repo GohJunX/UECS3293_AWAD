@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+@section('content')
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +39,7 @@
 
     </header>
 
-    <!-- header end -->
+    <!-- header end --> --}}
 
     <!-- shopping cart -->
 
@@ -427,3 +430,4 @@
 
 </body>
 </html>
+@endsection

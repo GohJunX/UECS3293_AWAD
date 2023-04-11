@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\OrderItem;
+use App\Models\Payment;
+
 
 class Order extends Model
 {
     use HasFactory;
+
 
 
     protected $fillable = [
@@ -24,12 +27,14 @@ class Order extends Model
         return $this->belongsTo(Payment::class);
     }
  
+
     public function user(){
         return $this->belongsTo(User::class);
     }
     public function orderItems(){
         return $this->hasMany(OrderItem::class);
     }
+
     public static function getPossibleStatusValues()
     {
         $column = 'status';
@@ -45,5 +50,6 @@ class Order extends Model
         }
         return $enumValues;
     }
+
 }
 
