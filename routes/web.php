@@ -13,6 +13,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MenuController;
 
 
 /*
@@ -70,8 +71,9 @@ Route::get('/product/{id}', [ProductController::class, 'show']);
 
 
 Route::view('/home','home')->name('home');
-Route::view('/menu', 'menu');
-Route::view("/product",'product');
+Route::get('/menu', [MenuController::class,'menu']);
+Route::get('/home', [HomeController::class,'home']);
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('user.product');
 Route::view("/order",'order');
 
 Route::get('profile/{id}', [UserController::class, 'showProfile'])->name('user.profile');

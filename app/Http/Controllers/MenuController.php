@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class MenuController extends Controller
 {
-    public function menu(Request $request)
+    public function menu()
     {
-        $data=Product::all();
-        return view('menu',['products'=>$data]);
+        $products=Product::with('category')->get();
+        // dd($products);
+        return view('menu',compact('products'));
     }
 }
