@@ -13,7 +13,7 @@
                     <h2>Order Your Best <br>Food anytime</h2>
                     <p>Hey,Our delicioous food is waiting for you. We are always near to you with fresh food.</p>
                 </div>
-                <form action="/order">
+                <form action="{{route('menu')}}">
                 <button>Explore Food</button>
                 </form>
             </div>

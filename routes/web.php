@@ -29,10 +29,7 @@ use App\Http\Controllers\MenuController;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-
-});
+Route::get('/', [HomeController::class,'index']);
 
 
 
@@ -64,15 +61,15 @@ Route::put('/orders/{order}/update_status', [OrderController::class,'updateStatu
 });
 
 
-Route::get('/cart', [CartController::class, 'showCart']);
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
 
 
-Route::get('/product/{id}', [ProductController::class, 'show']);
 
 
-Route::view('/home','home')->name('home');
-Route::get('/menu', [MenuController::class,'menu']);
-Route::get('/home', [HomeController::class,'home']);
+
+// Route::view('/home','home')->name('home');
+Route::get('/menu', [MenuController::class,'menu'])->name('menu');
+Route::get('/home', [HomeController::class,'index'])->name('home');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('user.product');
 Route::view("/order",'order');
 
