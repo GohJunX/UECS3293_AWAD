@@ -30,10 +30,10 @@
         <a  class="logo"> <i class="fas fa-bread-slice"></i> bakery </a>
         
         <nav class="navbar">
-            <a href="/home">home</a>
-            <a href="/menu">menu</a>
-            <a href="/product">product</a>
-            <a href="/order">order</a>
+            <a href="/home">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/product">Product</a>
+            <a href="/order">Order</a>
         </nav>
         <ul class="navbar-nav ms-auto">
             <!-- Authentication Links -->
@@ -76,7 +76,7 @@
             @endguest
         </ul>
         <div class="icons">
-            <div id="cart-btn" class="fas fa-shopping-cart"><a href="{{route('cart')}}"></a></div>
+            <!-- <div id="cart-btn" class="fas fa-shopping-cart"><a href="{{route('cart')}}"></a></div> -->
             <div id="menu-btn" class="fas fa-bars"></div>
         </div>
         
