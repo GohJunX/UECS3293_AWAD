@@ -83,7 +83,7 @@
     </header>
 
     <!-- header end -->
-        <main class="py-4 main-content">
+        <main class="main-content">
             @yield('content')
         </main>
     </div>
