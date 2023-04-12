@@ -19,6 +19,17 @@ class OrderController extends Controller
 
         return view('admin/orders', compact('orders','startIndex'));
     }
+    
+    public function store(Request $request){
+        $product=OrderItem::create([
+            'quantity' => $request->quantity,
+            'order_id ' => $request->order_id,
+            'product_id ' => $request->product_id,
+        ]);
+        $product->save();
+        return redirect()->route('cart.showCart')->with('success', 'Product has been put in shopping cart!');
+    }
+
     public function show($id)
     {   
         $order = Order::with(['user', 'orderItems.product'])->findOrFail($id);
