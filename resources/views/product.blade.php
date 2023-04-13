@@ -2,20 +2,21 @@
 @section('content')
 
 <div style="display: flex; justify-content: center;">
-    <div class="container" >
-        <h1>{{ $product->product_name }}</h1>
-        <p>{{ $product->product_description }}</p>
-        <p>Price: ${{ $product->price }}</p>
+    <div class="container" style="margin-top:100px">
+        <h1>{{ $product->name }}</h1><br>
+        <p>{{ $product->description }}</p><br>
+        <p>Price: ${{ $product->price }}</p><br>
         <div style="display: flex; justify-content: center;">
-            <img src="{{ asset('pictures/' . $product->product_name . '.jpeg') }}" alt="{{ $product->product_name }}" width="300">
+            <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="300">
         </div>
-        <form method="post" >
+        <form method="post" action="{{route('user.product.store',$product->id)}}">
             @csrf
+            
+            <div style="display: flex; justify-content: center; margin-top:20px;">
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="price" value="{{ $product->price }}">
             <input type="hidden" name="order_id" value="">
-            <div style="display: flex; justify-content: center; margin-top:20px;">
-            <input type="text" name="quantity" placeholder="How many you want?">
+            <input type="text" name="quantity" placeholder="How many you want?" value=1>
             </div>
             <div style="display: flex; justify-content: center;">
                 <button type="submit">Add to Cart</button>

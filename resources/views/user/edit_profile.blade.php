@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card" style="margin-top: 50px">
                     <div class="card-header">
                         <h4>Edit Profile</h4>
                     </div>

@@ -21,13 +21,14 @@ class OrderController extends Controller
     }
     
     public function store(Request $request){
+        // dd($request->order_id);
         $product=OrderItem::create([
             'quantity' => $request->quantity,
-            'order_id ' => $request->order_id,
-            'product_id ' => $request->product_id,
+            'product_id' => $request->product_id,
+            'order_id' => $request->order_id,
         ]);
         $product->save();
-        return redirect()->route('cart.showCart')->with('success', 'Product has been put in shopping cart!');
+        return redirect()->route('cart')->with('success', 'Product has been put in shopping cart!');
     }
 
     public function show($id)

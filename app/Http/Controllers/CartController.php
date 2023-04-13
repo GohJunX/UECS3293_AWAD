@@ -46,6 +46,7 @@ class CartController extends Controller
     
         // If the user has no items in their shopping cart, display an empty cart message
         if (!$order || $order->orderItems->isEmpty()) {
+            
             return view('cart')->with('message', 'Your cart is empty!');
         }
     
