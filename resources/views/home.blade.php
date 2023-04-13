@@ -4,7 +4,8 @@
 <body>
     
     <!-- home -->
-   
+
+   <title>Bakery Shop</title>
     <section class="grid" id="grid">
 
         <div class="content">

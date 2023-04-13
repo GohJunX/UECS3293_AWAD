@@ -27,7 +27,7 @@
 
     <header class="header">
         
-        <a  class="logo"> <i class="fas fa-bread-slice"></i> bakery </a>
+        <a  class="logo"> <i class="fas fa-bread-slice"></i> Bakery </a>
         
         <nav class="navbar">
             <a href="/home">Home</a>

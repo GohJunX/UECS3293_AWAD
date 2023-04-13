@@ -123,7 +123,7 @@
       <div id="credit_card_fields" style="display: none;">
                     <div class="form-group1">
                         <label for="name_on_card">Name on Card</label>
-                        <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
+                        <input type="text" class="form-control" id="name_on_card" name="name_on_card">
                     </div>
 
                     <div class="form-group">
@@ -180,8 +180,8 @@
                      @foreach ($products as $product)
                       <tr>  
                       <!-- <img src="{{ ($product->image) }}" alt="item" class="checkout-table-img"> -->
-                        <td><img src="" style="width:50px" alt=''></td>
-                        <td><div class="checkout-table-name">{{$product->product_name}}</td>
+                        <td><img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="50" height="50"></td>
+                        <td><div class="checkout-table-name">{{$product->name}}</td>
                         <td>  <div class="checkout-table-price">{{$product->price}}</td>
                         <?php $itemPrice = $product->price*1; ?>
                         <?php $totalPrice += $itemPrice; ?>
