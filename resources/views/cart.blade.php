@@ -45,41 +45,50 @@
     cursor: pointer;
     font-size: 16px;
 }
+
+p {
+  font-size: 18px;
+}
+
 </style>
 
 <div>
   <h1>Shopping Cart</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Product Name</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($cartItems as $item)
-      <tr>
-        <td>{{ $item->product->product_name }}</td>
-        <td>{{ $item->quantity }}</td>
-        <td>{{ $item->product->price }}</td>
-        <td>{{ $item->quantity * $item->product->price }}</td>
-      </tr>
-      @endforeach
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="3" class="total">Total:</td>
-        <td>{{ $total }}</td>
-      </tr>
-    </tfoot>
-  </table>
-  <div style="display: flex; justify-content: center;">
-    <a href="{{ route('checkout') }}">
-      <button type="submit">Checkout</button>
-    </a>
-  </div>
+  @if ($message)
+    <p>{{ $message }}</p>
+  @else
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($cartItems as $item)
+        <tr>
+          <td>{{ $item->product->product_name }}</td>
+          <td>{{ $item->quantity }}</td>
+          <td>{{ $item->product->price }}</td>
+          <td>{{ $item->quantity * $item->product->price }}</td>
+        </tr>
+        @endforeach
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="total">Total:</td>
+          <td>{{ $total }}</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div style="display: flex; justify-content: center;">
+      <a href="{{ route('checkout') }}">
+        <button type="submit">Checkout</button>
+      </a>
+    </div>
+  @endif
 </div>
 @endsection
