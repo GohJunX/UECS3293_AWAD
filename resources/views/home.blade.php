@@ -13,7 +13,7 @@
                     <h2>Order Your Best <br>Food anytime</h2>
                     <p>Hey,Our delicioous food is waiting for you. We are always near to you with fresh food.</p>
                 </div>
-                <form action="/order">
+                <form action="{{route('menu')}}">
                 <button>Explore Food</button>
                 </form>
             </div>
@@ -32,12 +32,15 @@
 
         <div class="box-container">
 
+        @foreach($products as $product)
             <div class="box">
                 <div class="image">
-                    <img src="image/bread/white bread.jpg" alt="">
+                <a href="{{ route('user.product', $product->id) }}">
+                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="300">
+                </a>
                 </div>
                 <div class="content">
-                    <h3>white bread</h3>
+                    <h3>{{$product['name']}}</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -45,138 +48,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <span class="price">RM15.99</span>
-                    <a href="#" class="btn">add to cart</a>
+                    <h3>{{$product['price']}}</h3>
                 </div>
             </div>
+            @endforeach
 
-            <div class="box">
-                <div class="image">
-                    <img src="image/bread/wheat bread.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>wheat bread</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="price">RM18.99</span>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="image/bread/sourdough bread.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>sourdough bread</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <span class="price">RM11.99</span>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="image/pies/apple pie.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>apple pie</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="price">RM17.99</span>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="image/pies/strawberry pie.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>strawberry pie</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <span class="price">RM28.99</span>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="image/cookies/sugar.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>sugar</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="price">RM35.99</span>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="image/cakes/chocolate cake.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>chocolate cake</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="price">RM46.99</span>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="image/pastries/cream puff.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>cream puff</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="price">RM15.99</span>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
-
-        </div>
+            
 
     </section>
 

@@ -34,6 +34,17 @@
     font-weight: bold;
     text-align: end;
   }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
 </style>
 
 <div>
@@ -65,5 +76,10 @@
       </tr>
     </tfoot>
   </table>
+  <div style="display: flex; justify-content: center;">
+    <a href="{{ route('checkout') }}">
+      <button type="submit">Checkout</button>
+    </a>
+  </div>
 </div>
 @endsection

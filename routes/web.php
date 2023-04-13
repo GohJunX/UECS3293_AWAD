@@ -13,6 +13,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MenuController;
 
 
 
@@ -32,9 +33,7 @@ use App\Http\Controllers\CheckoutController;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'index']);
 
 
 
@@ -67,10 +66,7 @@ Route::put('/orders/{order}/update_status', [OrderController::class,'updateStatu
 });
 
 
-Route::get('/cart', [CartController::class, 'showCart']);
-
-
-Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
 
 
 Route::get('/checkout', [CheckoutController::class,"index"]);
@@ -78,4 +74,10 @@ Route::post('/checkout', [CheckoutController::class,"addToOrder"])->name('checko
 
 
 Route::view('/thankyou','thankyou')->name('thanyou');
+
+// Route::view('/home','home')->name('home');
+Route::get('/menu', [MenuController::class,'menu'])->name('menu');
+Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('user.product');
+Route::view("/order",'order');
 

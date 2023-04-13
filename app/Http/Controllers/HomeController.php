@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
-use App\Models\product;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -28,13 +28,10 @@ class HomeController extends Controller
         if (Gate::allows('isAdmin')) {
             return redirect('admin/dashboard');
         } else {
-            return view('home');
+            $data=Product::all();
+        return view('home',['products'=>$data]);
+            
         }
     }
-    public function home()
-    {
-        $data=product::all();
-        return view('home2',['products'=>$data]);
-    }
-
+   
 }
