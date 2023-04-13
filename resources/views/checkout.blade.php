@@ -123,7 +123,7 @@
       <div id="credit_card_fields" style="display: none;">
                     <div class="form-group1">
                         <label for="name_on_card">Name on Card</label>
-                        <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
+                        <input type="text" class="form-control" id="name_on_card" name="name_on_card">
                     </div>
 
                     <div class="form-group">

@@ -29,7 +29,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>{{$product['price']}}</h3>
-                    <a href="#s" class="btn">add to cart</a>
+                    <a href="{{ route('user.product', $product->id) }}" class="btn">add to cart</a>
                 </div>
                
             </div>
@@ -58,7 +58,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>{{$product['price']}}</h3>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="{{ route('user.product', $product->id) }}" class="btn">add to cart</a>
                 </div>
             </div>
             @endif
@@ -86,7 +86,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>{{$product['price']}}</h3>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="{{ route('user.product', $product->id) }}" class="btn">add to cart</a>
                 </div>
             </div>
             @endif
@@ -113,7 +113,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>{{$product['price']}}</h3>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="{{ route('user.product', $product->id) }}" class="btn">add to cart</a>
                 </div>
             </div>
             @endif
@@ -140,7 +140,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>{{$product['price']}}</h3>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="{{ route('user.product', $product->id) }}" class="btn">add to cart</a>
                 </div>
             </div>
             @endif
