@@ -1,0 +1,46 @@
+.flex-parent {
+    display: flex;
+  }
+  
+  .jc-center {
+    justify-content: center;
+  }
+
+.card-header{
+    font-size:50px;
+    font-style:bold;
+    text-align:center;
+    margin-top:50px;
+
+}
+
+.orderButton{
+    padding: 12px 40px;
+    margin:auto;
+    margin-top: 20px;
+    font-size:25px;
+    border-radius:5px;
+    background: rgb(249, 150, 44);
+    color: white !important;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+
+.button-primary {
+	background: #f7ae38;
+	color: white !important;
+	padding: 12px 40px;
+	border-radius:5px;
+	font-size:16px;
+}
+
+.orderButton:hover {
+	background: #f39c12;
+}
+
+.orderButton:disabled {
+	background: #f6ba5b;
+	cursor: not-allowed;
+}

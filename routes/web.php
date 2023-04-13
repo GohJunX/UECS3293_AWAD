@@ -15,6 +15,10 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
 
+
+use App\Http\Controllers\CheckoutController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,15 +34,15 @@ Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
-
 });
+
 
 
 
 Auth::routes();
 
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['adminAuthenticate']], function(){
     // Route::get('/dashboard',function(){
@@ -69,12 +73,9 @@ Route::get('/cart', [CartController::class, 'showCart']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
 
-Route::view('/home','home')->name('home');
-Route::view('/menu', 'menu');
-Route::view("/product",'product');
-Route::view("/order",'order');
+Route::get('/checkout', [CheckoutController::class,"index"]);
+Route::post('/checkout', [CheckoutController::class,"addToOrder"])->name('checkout');
 
-Route::get('profile/{id}', [UserController::class, 'showProfile'])->name('user.profile');
-Route::get('profile/{id}/editProfile', [UserController::class, 'editProfile'])->name('user.profile.edit');
-Route::put('profile/{id}/updateProfile', [UserController::class, 'updateProfile'])->name('user.profile.update');
-Route::get('profile/{id}/order_history',[UserController::class,'getOrders'])->name('user.order_history');
+
+Route::view('/thankyou','thankyou')->name('thanyou');
+
