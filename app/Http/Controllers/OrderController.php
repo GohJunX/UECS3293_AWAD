@@ -11,7 +11,9 @@ use App\Models\User;
 
 class OrderController extends Controller
 {
-
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $orders = OrderItem::with(['order.user', 'product'])->orderBy('created_at','desc')->paginate(15);
         $currentPage = $orders->currentPage();
@@ -23,7 +25,7 @@ class OrderController extends Controller
     public function store(Request $request){
         // dd($request->order_id);
         $userId = auth()->id();
-        $order=Order::with('user')->where('user_id',$userId)->where('status','pending')->get();
+        $order=Order::with('user')->where('user_id',$userId)->where('status','pending')->first();
         if($order->count()==0){
             $order=Order::create(['status'=>'pending','user_id'=>$userId]);
             $order->save();
