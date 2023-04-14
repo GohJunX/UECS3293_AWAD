@@ -19,7 +19,7 @@
                 </form>
             </div>
                 <div class="content-right">
-                    <img src="image/cakes.jpg" alt="">
+                    <img src="image/animation.jpg" alt="">
                 </div>
         </div>
     </section>
@@ -159,22 +159,18 @@
     <!-- order -->
 
     <section class="order" id="order">
-
-        <h1 class="heading"><span>order</span> now </h1>
-
-        <div class="row">
-
-            <div class="image">
+         <h1 class="heading" ><span>order</span> now </h1>
+         <div style="display:flex;justify-content:center;margin-top:-65px">
                 <img src="image/order.gif" alt="">
             </div>
-
-            <form action="">
-
-                <input type="submit" value="order now" class="btn">
+            <div style="display:flex;justify-content:center">
+            <form action="{{route('menu')}}">
+                <button style="background-color: #ff511c;
+  font-size:30px;padding:10px;color:white">Order Now</button>
+            </div>
             </form>
-
+            </div>
         </div>
-
     </section>
 
     <!-- order end -->
