@@ -180,7 +180,7 @@
                      @foreach ($products as $product)
                       <tr>  
                       <!-- <img src="{{ ($product->image) }}" alt="item" class="checkout-table-img"> -->
-                        <td><img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="50" height="50"></td>
+                        <td><img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="70" height="70" style="margin:5px"></td>
                         <td><div class="checkout-table-name">{{$product->name}}</td>
                         <td>  <div class="checkout-table-price">{{$product->price}}</td>
                         <?php $itemPrice = $product->price*1; ?>

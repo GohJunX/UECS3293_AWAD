@@ -16,7 +16,7 @@
             <div class="box">
                 <div class="image">
                 <a href="{{ route('user.product', $product->id) }}">
-                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="300">
+                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="150" height="150">
                 </a>
                 </div>
                 <div class="content">
@@ -45,7 +45,7 @@
             <div class="box">
                 <div class="image">
                 <a href="{{ route('user.product', $product->id) }}">
-                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="300">
+                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="150" height="150">
                 </a>
                 </div>
                 <div class="content">
@@ -73,7 +73,7 @@
             <div class="box">
                 <div class="image">
                 <a href="{{ route('user.product', $product->id) }}">
-                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="300">
+                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="150" height="150">
                 </a>
                 </div>
                 <div class="content">
@@ -100,7 +100,7 @@
             <div class="box">
                 <div class="image">
                 <a href="{{ route('user.product', $product->id) }}">
-                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="300">
+                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="150" height="150">
                 </a>
                 </div>
                 <div class="content">
@@ -127,7 +127,7 @@
             <div class="box">
                 <div class="image">
                 <a href="{{ route('user.product', $product->id) }}">
-                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="300">
+                <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="50" height="50">
                 </a>
                 </div>
                 <div class="content">
