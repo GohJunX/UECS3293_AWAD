@@ -67,13 +67,14 @@ Route::put('/orders/{order}/update_status', [OrderController::class,'updateStatu
 
 
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
+Route::post('/cart/add-to-cart', [CartController::class, 'addToCart'])->name('cart.addToCart');
 
 
 Route::get('/checkout', [CheckoutController::class,"index"]);
 Route::post('/checkout', [CheckoutController::class,"addToOrder"])->name('checkout');
 
 
-Route::view('/thankyou','thankyou')->name('thanyou');
+Route::view('/thankyou','thankyou')->name('thankyou');
 
 // Route::view('/home','home')->name('home');
 Route::get('/menu', [MenuController::class,'menu'])->name('menu');

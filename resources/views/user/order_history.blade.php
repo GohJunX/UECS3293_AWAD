@@ -32,7 +32,7 @@
                     <td>{{ $order->id }}</td>
                     <td>{{ $order->payment ? $order->payment->payment_method : 'N/A' }}</td>
                     <td>{{ $order->payment ? $order->payment->payment_status : 'N/A' }}</td>
-                    <td>{{ $order->order_status }}</td>
+                    <td>{{ $order->status }}</td>
                     <td>$ {{ $order->total_amount }}</td>
                     <td>{{ $order->created_at }}</td>
                         <!-- this is the line to show the details of order which is go to cart or somewhere to view-->

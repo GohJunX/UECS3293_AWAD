@@ -54,7 +54,7 @@
                                     <td><a href="">{{$order->id}}</a></td>
                                     <td>{{$order->created_at}}</td>
                                     <td>${{$order->total_amount}}</td>
-                                    <td>{{$order->order_status}}</td>
+                                    <td>{{$order->status}}</td>
                                 </tr>
                                 @endforeach
                                 @endif

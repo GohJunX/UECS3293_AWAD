@@ -72,10 +72,10 @@ class CheckoutController extends Controller
 
         if ($request->input('payment_method') == 'credit_card') {
             // Process credit card payment here
-            $order->order_status = 'paid';
+            $order->status = 'paid';
         } else {
             // Cash on delivery
-            $order->order_status = 'pending';
+            $order->status = 'pending';
         }
 
         $order->save();

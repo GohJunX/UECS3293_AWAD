@@ -13,7 +13,7 @@
             @csrf
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="price" value="{{ $product->price }}">
-            <input type="hidden" name="order_id" value="{{ auth()->user()->orders()->where('order_status', 'pending')->where('user_id', auth()->user()->id)->first()->id ?? '' }}">
+            <input type="hidden" name="order_id" value="{{ auth()->user()->orders()->where('status', 'pending')->where('user_id', auth()->user()->id)->first()->id ?? '' }}">
             <div style="display: flex; justify-content: center; margin-top:20px;">
             <input type="number" name="quantity" placeholder="How many you want?">
             </div>

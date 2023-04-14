@@ -33,7 +33,7 @@
             <a href="/home">Home</a>
             <a href="/menu">Menu</a>
             <a href="/product">Product</a>
-            <a href="/order">Order</a>
+            <a href="/cart">Order</a>
         </nav>
         <ul class="navbar-nav ms-auto">
             <!-- Authentication Links -->
