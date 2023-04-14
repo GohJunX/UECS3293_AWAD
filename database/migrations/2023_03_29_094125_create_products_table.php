@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
+            $table->string('image');
             $table->integer('quantity');
             $table->double('price',8,2);
             $table->unsignedBigInteger('category_id');

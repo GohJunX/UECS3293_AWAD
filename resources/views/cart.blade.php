@@ -2,12 +2,14 @@
 
 @section('content')
 <style>
+  
   body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    
   }
 
   h1 {
@@ -17,11 +19,18 @@
 
   table {
     border-collapse: collapse;
-    border: 1px solid black;
-    table-layout: fixed;
-    width: 100%;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width:1000px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   }
 
+  thead tr{
+    background-color: #de9814;
+    color: #ffffff;
+    text-align: left;
+  }
   th, td {
     border: 1px solid black;
     font-size: 20px;
@@ -61,6 +70,7 @@ p {
     <table>
       <thead>
         <tr>
+          <th></th>
           <th>Product Name</th>
           <th>Quantity</th>
           <th>Price</th>
@@ -71,6 +81,7 @@ p {
       <tbody>
         @foreach ($cartItems as $item)
         <tr>
+          <td><img src="{{ asset('image/' . $item->product->name . '.jpg') }}" alt="{{ $item->product->name }}" width="100" height="100" style="margin:auto"></td>
           <td>{{ $item->product->name }}</td>
           <td>{{ $item->quantity }}</td>
           <td>{{ $item->product->price }}</td>
@@ -86,7 +97,7 @@ p {
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="3" class="total">Total:</td>
+          <td colspan="5" class="total">Total:</td>
           <td>{{ $total }}</td>
         </tr>
       </tfoot>

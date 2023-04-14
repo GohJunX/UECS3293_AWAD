@@ -23,7 +23,7 @@
                     <td>{{ $order->status }}</td>
                     <td>$ {{ $order->total_amount }}</td>
                     <td>{{ $order->created_at }}</td>
-                    <td><a href="{{ route('user.show.order', $order->order->id) }}" class="btn btn-primary">View Details</a></td>
+                    <td><a href="{{ route('user.show.order', $order->id) }}" class="btn btn-primary">View Details</a></td>
                 </tr>
                 @endforeach
             </tbody>

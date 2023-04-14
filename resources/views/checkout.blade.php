@@ -129,17 +129,16 @@
                   <table>
                     <thead>
                       <tr>
-                       
+                        <th></th>
                         <th><label class="checkout_order-name">Item Name</label></th>
                         <th><label class="checkout_order">Price</label></th>
                         <th><label class="checkout_order">Qty</label></th>
+                        <th><label class="checkout_order">Sub Total</label></th>
                       </tr>
                      </thead>
                      <tbody>
 
-                     <!-- no need -->
-                     <?php $itemPrice = 0; ?>
-                     <?php $totalPrice = 0; ?>
+                    
 
                      <!-- cartItem  -->
                       
@@ -147,16 +146,16 @@
                      @foreach ($orderItems as $orderItem)
                       <tr>  
                       
-                        {{-- <td><img src="/image{{ $orderItem->image }}" style="width:50px" alt=''></td> --}}
+                        <td><img src="{{ asset('image/' . $orderItem->product->name . '.jpg') }}" alt="{{ $orderItem->product->name }}" width="70" height="70" style="margin:5px"></td>                        
                         <td><div class="checkout-table-name">{{$orderItem->product->name}}</td>
                         <td>  <div class="checkout-table-price">{{$orderItem->product->price}}</td>
 
                         <td>
                         <div class="checkout-table-row-right">
                             <div class="checkout-table-quantity"> {{$orderItem->quantity}}</div>
-                            
                         </div>
                        </td>
+                       <td><div class="checkout-table-price"> {{$orderItem->quantity*$orderItem->product->price}}</div></td>
                       </tr>
                      
                       

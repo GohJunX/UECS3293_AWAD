@@ -9,10 +9,17 @@ use Session;
 
 class CartController extends Controller
 {
+
     
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
+
     // With Authentication
     public function showCart()
     {
+        
         // Get the authenticated user's ID
         $userId = auth()->id();
     

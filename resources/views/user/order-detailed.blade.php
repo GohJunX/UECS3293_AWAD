@@ -50,14 +50,16 @@ p {
   font-size: 18px;
 }
 
+
+
 </style>
 
-<div>
+<div class="container">
   <h1>Order Details</h1>
 
  
-    <table>
-      <thead>
+    <table class="table table-bordered table-hover table-striped">
+      <thead class="table-dark">
         <tr>
           <th>Product Name</th>
           <th>Quantity</th>

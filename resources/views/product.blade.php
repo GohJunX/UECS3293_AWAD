@@ -14,7 +14,12 @@
             @csrf
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="price" value="{{ $product->price }}">
-            <input type="hidden" name="order_id" value="{{ auth()->user()->orders()->where('status', 'pending')->where('user_id', auth()->user()->id)->first()->id ?? '' }}">
+            @if(auth()->check() && auth()->user()->orders()->where('status', 'pending')->where('user_id', auth()->user()->id)->exists())
+    <input type="hidden" name="order_id" value="{{ auth()->user()->orders()->where('status', 'pending')->where('user_id', auth()->user()->id)->first()->id }}">
+@else
+    
+@endif
+
             <div style="display: flex; justify-content: center; margin-top:20px;">
             <input type="number" name="quantity" value=1 min=1>
             </div>
