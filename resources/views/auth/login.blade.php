@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div style="text-align:center; background-color:#e7eaea">
-                <img style="max-width:50%" src='images/png-transparent-samsung-galaxy-a8-a8-user-login-telephone-avatar-pawn-blue-angle-sphere.png'>
+                <img style="max-width:50%;margin-top:50px" src='images/png-transparent-samsung-galaxy-a8-a8-user-login-telephone-avatar-pawn-blue-angle-sphere.png'>
             </div>
             <div class="card">
                 
@@ -16,13 +16,13 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" style="font-size:18px" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" @if(Cookie::has('user' )) value="{{Cookie::get('user')}}" @endif required autocomplete="email" autofocus>
+                                <input id="email" style="font-size:18px" type="email" class="form-control @error('email') is-invalid @enderror" name="email" @if(Cookie::has('user' )) value="{{Cookie::get('user')}}" @endif required autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" style="font-size:14px" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -30,15 +30,15 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" style="font-size:18px"class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" @if(Cookie::has('userpwd' )) value="{{Cookie::get('userpwd')}}" @endif required autocomplete="current-password">
+                                <input id="password" style="font-size:18px" type="password" class="form-control @error('password') is-invalid @enderror" name="password" @if(Cookie::has('userpwd' )) value="{{Cookie::get('userpwd')}}" @endif required autocomplete="current-password">
 
                                 
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" style="font-size:14px" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -48,9 +48,9 @@
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="remember" @if(Cookie::has('user' )) checked @endif name="remember" id="remember" {{ old('remember' ) ? 'checked' : '' }}>
+                                    <input class="form-check-input" style="font-size:18px" type="checkbox" value="remember" @if(Cookie::has('user' )) checked @endif name="remember" id="remember" {{ old('remember' ) ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label" style="font-size:18px"for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
@@ -59,7 +59,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" style="font-size:18px" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
 
