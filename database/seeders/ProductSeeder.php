@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             $numProducts = $faker->numberBetween(5, 20);
             for ($i = 0; $i < $numProducts; $i++) {
                 $product = new Product();
-                $product->name = $faker->foodName();
+                $product->name = $faker->name;
                 $product->description = $faker->sentence(10);
                 $product->price = $faker->randomFloat(2, 1, 100);
                 $product->category_id = $category->id;

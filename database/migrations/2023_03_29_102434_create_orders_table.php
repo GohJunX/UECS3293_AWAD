@@ -16,12 +16,11 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->enum('status',['pending','confirmed','delivered'])->default('pending');
-            $table->dateTime('pickup_delivery_date_time');
+            $table->dateTime('pickup_delivery_date_time')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('payment_id')->nullable();
             $table->foreign('payment_id')->references('id')->on('payments');
-            $table->float('total_amount');
             $table->timestamps();
         });
     }
