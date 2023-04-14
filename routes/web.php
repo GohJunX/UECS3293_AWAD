@@ -72,7 +72,7 @@ Route::delete('cart/{id}',[CartController::class,'deleteItem'])->name('cart.item
 
 
 Route::get('/checkout', [CheckoutController::class,"index"]);
-Route::post('/checkout', [CheckoutController::class,"addToOrder"])->name('checkout');
+Route::post('/checkout', [CheckoutController::class,"updateToOrder"])->name('checkout');
 
 
 Route::view('/thankyou','thankyou')->name('thankyou');

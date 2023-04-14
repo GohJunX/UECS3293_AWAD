@@ -35,6 +35,14 @@
 .checkout_order{
 	  color:white;
 	margin:10px;
+	margin-bottom:30px;
+  }
+  .checkout_order-name{
+	color:white;
+	margin:10px;
+	margin-bottom:30px;
+	margin-left:0px;
+	
   }
 
 .form-check-label {
@@ -173,14 +181,12 @@ h1.checkout-heading {
 .checkout-table-row .checkout-table-row-left {
 	width: 75%;
 }
-
 .checkout-table-row .checkout-table-img {
 	max-height: 60px;
 }
 
 .checkout-table-name {
 	color: #919191;
-	text-align:center;
 	color:white;
 }
 

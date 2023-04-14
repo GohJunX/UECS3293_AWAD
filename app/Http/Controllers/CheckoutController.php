@@ -28,23 +28,17 @@ class CheckoutController extends Controller
 
 
 
- return view('checkout',[ '$orders'=> $order,'orderItems'=>$orderItems]);
+ return view('checkout',['order'=> $order,'orderItems'=>$orderItems]);
 
 }
 
 
 
 
- public function UpdateToOrder(Request $request){
-
-
-
-
- $order-> pickup_delivery_date_time= $request->input('delivery_date');
-
- $order->payment_method = $request->input('payment_method');
-
-
+ public function updateToOrder(Request $request){
+    $userId=auth()->id();
+$order=Order::with('user')->where('user_id',$userId)->where('status','pending')->first();
+ $order->pickup_delivery_date_time = $request->delivery_date;
 
 
  if ($request->input('payment_method') == 'credit_card') {
@@ -64,7 +58,7 @@ class CheckoutController extends Controller
 
 // Redirect to thank you page
 
-return redirect->route('thankyou');
+return redirect()->route('thankyou');
 
 }
 }

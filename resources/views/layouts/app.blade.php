@@ -35,7 +35,7 @@
             <a href="/product">Product</a>
             <a href="/cart">Order</a>
         </nav>
-        <ul class="navbar-nav ms-auto " style="font-size:30px">
+        <ul class="navbar-nav ms-auto " style="font-size:15px">
             <!-- Authentication Links -->
             @guest
                 @if (Route::has('login'))
@@ -43,7 +43,7 @@
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                 @endif
-
+                
                 @if (Route::has('register'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>

@@ -20,6 +20,6 @@
 
 <script>
 		function redirectToOrderPage() {
-			return redirect()->route('order');
+			return {{route('cart')}};
 		}
-	</script>
+</script>
