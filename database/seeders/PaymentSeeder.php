@@ -25,9 +25,9 @@ class PaymentSeeder extends Seeder
         foreach ($orders as $order) {
             // Create a payment for each order
             Payment::create([
-                'payment_amount' => $order->total_amount,
-                'payment_method' => $faker->randomElement(['Card', 'Cash']),
-                'payment_status' => $faker->randomElement(['Completed', 'Pending', 'Canceled']),
+                'amount' => $order->total_amount,
+                'method' => $faker->randomElement(['Card', 'Cash']),
+                'status' => $faker->randomElement(['Completed', 'Pending', 'Canceled']),
                 'order_id' => $order->id,
                 'created_at' => $faker->dateTimeBetween($order->created_at, 'now'),
                 'updated_at' => $faker->dateTimeBetween($order->created_at, 'now'),

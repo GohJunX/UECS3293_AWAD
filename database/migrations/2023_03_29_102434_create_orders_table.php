@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->enum('order_status',['pending','confirmed','delivered'])->default('pending');
+            $table->enum('status',['pending','confirmed','delivered'])->default('pending');
             $table->dateTime('pickup_delivery_date_time');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
