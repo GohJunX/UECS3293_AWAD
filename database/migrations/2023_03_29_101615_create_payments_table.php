@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->double('payment_amount',8,2);
-            $table->enum('payment_method',['Cash','Card']);
-            $table->enum('payment_status',['Pending','Completed','Canceled'])->default('pending');
+            $table->double('amount',8,2);
+            $table->enum('method',['Cash','Card']);
+            $table->enum('status',['Pending','Completed','Canceled'])->default('pending');
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

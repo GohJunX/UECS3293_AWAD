@@ -17,12 +17,12 @@ class OrderItemSeeder extends Seeder
     public function run()
     {
         $faker= Faker::create();
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= 20; $i++) {
             $orderItem = new OrderItem();
-            $orderItem->product_id = $faker->numberBetween(1, 50);
+            $orderItem->product_id = $faker->numberBetween(1, 14);
             $orderItem->quantity = $faker->numberBetween(1, 5);
             $orderItem->price = $faker->randomFloat(2, 1, 100);
-            $orderItem->order_id = $faker->numberBetween(1, 50);
+            $orderItem->order_id = $faker->numberBetween(1, 14);
             $orderItem->save();
     }
 }
