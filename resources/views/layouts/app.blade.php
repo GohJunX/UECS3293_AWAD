@@ -35,7 +35,7 @@
             <a href="/product">Product</a>
             <a href="/cart">Order</a>
         </nav>
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto " style="font-size:30px">
             <!-- Authentication Links -->
             @guest
                 @if (Route::has('login'))
@@ -83,7 +83,7 @@
     </header>
 
     <!-- header end -->
-        <main class="main-content">
+        <main class="main-content" style="margin-top:10%;">
             @yield('content')
         </main>
     </div>

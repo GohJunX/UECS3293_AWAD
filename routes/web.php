@@ -68,6 +68,7 @@ Route::put('/orders/{order}/update_status', [OrderController::class,'updateStatu
 
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
 Route::post('/cart/add-to-cart', [CartController::class, 'addToCart'])->name('cart.addToCart');
+Route::delete('cart/{id}',[CartController::class,'deleteItem'])->name('cart.item.destroy');
 
 
 Route::get('/checkout', [CheckoutController::class,"index"]);
@@ -80,7 +81,6 @@ Route::view('/thankyou','thankyou')->name('thankyou');
 Route::get('/menu', [MenuController::class,'menu'])->name('menu');
 Route::get('/home', [HomeController::class,'index'])->name('home');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('user.product');
-Route::post('/product/{id}', [OrderController::class, 'store'])->name('user.product.store');
 Route::view("/order",'order');
 
 Route::get('profile/{id}', [UserController::class, 'showProfile'])->name('user.profile');

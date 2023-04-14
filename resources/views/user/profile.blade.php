@@ -51,7 +51,7 @@
                                 @foreach ($orders as $order)
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th> 
-                                    <td><a href="">{{$order->id}}</a></td>
+                                    <td><a href="{{route('cart')}}">{{$order->id}}</a></td>
                                     <td>{{$order->created_at}}</td>
                                     <td>${{$order->total_amount}}</td>
                                     <td>{{$order->status}}</td>

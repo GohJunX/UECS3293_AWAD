@@ -58,6 +58,9 @@ class CartController extends Controller
         $total = $cartItems->sum(function ($item) {
             return $item->quantity * $item->product->price;
         });
+        
+        $order->total_amount=$total;
+        $order->save();
     
         // Pass the order items and total cost to the cart view
         return view('cart')->with([
@@ -66,9 +69,16 @@ class CartController extends Controller
         ]);
     }    
     public function addToCart(Request $request){
+        $userId = auth()->id();
+        $order=Order::with('user')->where('user_id',$userId)->where('status','pending')->first();
+        if(!$order){
+            $order=Order::create(['status'=>'pending','user_id'=>$userId]);
+            $order->save();
+        }
+        
         $product=OrderItem::create([
             'quantity' => $request->quantity,
-            'order_id' => $request->order_id,
+            'order_id' => $order->id,
             'product_id' => $request->product_id,
         ]);
         $product->save();

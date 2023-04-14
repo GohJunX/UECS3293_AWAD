@@ -55,7 +55,7 @@ p {
 <div>
   <h1>Shopping Cart</h1>
 
-  @if ($message)
+  @if (isset($message))
     <p>{{ $message }}</p>
   @else
     <table>
@@ -71,11 +71,16 @@ p {
       <tbody>
         @foreach ($cartItems as $item)
         <tr>
-          <td>{{ $item->product->product_name }}</td>
+          <td>{{ $item->product->name }}</td>
           <td>{{ $item->quantity }}</td>
           <td>{{ $item->product->price }}</td>
           <td>{{ $item->quantity * $item->product->price }}</td>
-          <td><a href="{{ url('deleteItem/'.$item->id) }}">Remove</a></td>
+          <td>
+            <form action="{{route('cart.item.destroy',$item->id)}}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-outline-danger btn-lg">Remove</button>
+          </form></td>
         </tr>
         @endforeach
       </tbody>
@@ -91,6 +96,7 @@ p {
         <button type="submit">Checkout</button>
       </a>
     </div>
+    
   @endif
 </div>
 @endsection

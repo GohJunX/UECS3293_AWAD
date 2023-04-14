@@ -19,7 +19,8 @@ class Order extends Model
         'user_id',
         'payment_id',
         'status',
-        'pickup_delivery_date_time'
+        'pickup_delivery_date_time',
+        'total_amount'
     ];
 
     public function payment()
