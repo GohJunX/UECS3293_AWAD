@@ -17,6 +17,11 @@ class ProductController extends Controller
         
         return view('admin/products', compact('products', 'startIndex'));
     }
+    
+    public function showAll(){
+        $data=Product::all();
+          return view('all_product',['products'=>$data]);
+    }
 
     public function show($id)
     {

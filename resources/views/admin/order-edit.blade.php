@@ -32,7 +32,7 @@
                                                 <td>{{ $item->product->name }}</td>
                                                 <td>{{ $item->quantity }}</td>
                                                 <td>{{ $item->product->price }}</td>
-                                                <td>{{ $item->order->total_amount }}</td>
+                                                <td>{{ $item->quantity * $item->product->price }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

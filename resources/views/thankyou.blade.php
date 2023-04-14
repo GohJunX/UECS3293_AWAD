@@ -1,3 +1,7 @@
+@php
+use Illuminate\Support\Facades\Session;
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
@@ -8,8 +12,9 @@
             <div>
                 <div class="card-header">{{ __('Thank you for your order!') }}</div>
                 <div class="flex-parent jc-center" >
-
-                <button class="orderButton" onclick="redirectToOrderPage()">View Your Order</button>
+                    <button class="orderButton"><a href="{{route('home')}}" id="to-cart">
+                    Home</a></button>
+                    
 </div>
 
             </div>
@@ -18,8 +23,3 @@
 </div>
 @endsection
 
-<script>
-		function redirectToOrderPage() {
-			return {{route('cart')}};
-		}
-</script>

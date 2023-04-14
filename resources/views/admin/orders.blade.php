@@ -8,10 +8,9 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>No.</th>
                         <th>Customer Name</th>
                         <th>Product Name</th>
-                        <th>Quantity</th>
                         <th>Total Price</th>
                         <th>Order Date</th>
                         <th>Status</th>
@@ -24,8 +23,8 @@
                             <td>{{ $startIndex+$loop->iteration }}</td>
                             <td>{{ $order->order->user->name }}</td>
                             <td>{{ $order->product->name }}</td>
-                            <td>{{ $order->quantity }}</td>
-                            <td>{{ $order->price }}</td>
+                            
+                            <td>{{ $order->order->total_amount }}</td>
                             <td>{{ $order->order->created_at }}</td>
                             <td>{{ $order->order->status}}</td>
                             <td>

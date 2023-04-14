@@ -32,10 +32,10 @@
         <nav class="navbar">
             <a href="/home">Home</a>
             <a href="/menu">Menu</a>
-            <a href="/product">Product</a>
-            <a href="/cart">Order</a>
+            <a href="/all_product">Product</a>
+            <a href="/cart">Cart</a>
         </nav>
-        <ul class="navbar-nav ms-auto " style="font-size:15px">
+        <ul class="navbar-nav ms-auto">
             <!-- Authentication Links -->
             @guest
                 @if (Route::has('login'))
@@ -43,7 +43,7 @@
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                 @endif
-                
+
                 @if (Route::has('register'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -82,8 +82,13 @@
         
     </header>
 
+    
+
     <!-- header end -->
-        <main class="main-content" style="margin-top:10%;">
+
+
+
+        <main class="main-content">
             @yield('content')
         </main>
     </div>

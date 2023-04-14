@@ -1,4 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap'); */
+nav-item{
+  font-size:1.4rem;
+}
 
 .main-content{
   margin-top:80px;
@@ -15,7 +17,6 @@
 *{
   font-family: 'Vidaloka', sans-serif;
   margin:0; padding:0;
-  margin-top:-5px;
   box-sizing: border-box;
   outline: none; border:none;
   text-decoration: none;
@@ -84,10 +85,13 @@ section{
   z-index: 1000;
   background: var(--bg);
   box-shadow: var(--box-shadow);
+  box-shadow: o 3px 2px -2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 9%;
+  padding: 2rem 6%;
+  padding-top:10px;
+  padding-bottom:10px;
 
 }
 
@@ -95,6 +99,7 @@ section{
   font-size: 2.5rem;
   font-weight: bolder;
   color: var(--black);
+  
 }
 
 .header .logo i{
@@ -102,10 +107,16 @@ section{
   padding-right: .5rem;
 }
 
+.header .navbar{
+  margin-left:20%;
+}
+
 .header .navbar a{
-  font-size: 1.7rem;
+  font-size: 1.95rem;
   color: var(--black);
   margin: 0 1rem;
+  margin-left:40px;
+  text-decoration:none;
 }
 
 .header .navbar a:hover{
@@ -300,6 +311,7 @@ section{
 .footer{
   background: var(--bg);
   text-align: center;
+  bottom: 0; left: 0; right: 0;
 }
 
 .footer .box-container{
@@ -441,56 +453,3 @@ section{
       transform: rotate(360deg);
     }
   }
-
- 
-  /* .order .content .content-right{
-   
-    width: 100%;
-    margin-left:300px;
-  }
-   */
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* media queries */
-
-@media (max-width: 991px){
-
-  html{
-    font-size: 55%;
-  }
-
-  .header{
-    padding: 2rem;
-  }
-
-  section{
-    padding: 2rem;
-  }
-
-}
-

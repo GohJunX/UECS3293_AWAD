@@ -75,15 +75,18 @@ Route::get('/checkout', [CheckoutController::class,"index"]);
 Route::post('/checkout', [CheckoutController::class,"updateToOrder"])->name('checkout');
 
 
-Route::view('/thankyou','thankyou')->name('thankyou');
 
-// Route::view('/home','home')->name('home');
+Route::view('/thankyou','thankyou')->name('thankyou');
+Route::get("/order/{order}",[OrderController::class,'show'])->name('user.show.order');
 Route::get('/menu', [MenuController::class,'menu'])->name('menu');
 Route::get('/home', [HomeController::class,'index'])->name('home');
-Route::get('/product/{id}', [ProductController::class, 'show'])->name('user.product');
-Route::view("/order",'order');
+Route::get('/product/{id}',[ProductController::class,'show'])->name('user.product');
+
+
 
 Route::get('profile/{id}', [UserController::class, 'showProfile'])->name('user.profile');
 Route::get('profile/{id}/editProfile', [UserController::class, 'editProfile'])->name('user.profile.edit');
 Route::put('profile/{id}/updateProfile', [UserController::class, 'updateProfile'])->name('user.profile.update');
 Route::get('profile/{id}/order_history',[UserController::class,'getOrders'])->name('user.order_history');
+
+Route::get('all_product',[ProductController::class,'showAll']);

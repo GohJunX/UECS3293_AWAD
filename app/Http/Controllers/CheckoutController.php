@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Order;
 use App\Models\OrderItem;
+use Session;
 
 class CheckoutController extends Controller
 {
@@ -39,13 +40,13 @@ class CheckoutController extends Controller
     $userId=auth()->id();
 $order=Order::with('user')->where('user_id',$userId)->where('status','pending')->first();
  $order->pickup_delivery_date_time = $request->delivery_date;
+ $order->payment_method = $request->payment_method;
 
-
- if ($request->input('payment_method') == 'credit_card') {
+ if ($request->input('payment_method') == 'credit card') {
 
 // Process credit card payment here
 
-     $order->status = 'confirm';
+     $order->status = 'confirmed';
 
  } else {
 

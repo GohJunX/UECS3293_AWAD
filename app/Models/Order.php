@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\OrderItem;
-use App\Models\Payment;
+
 
 
 class Order extends Model
@@ -17,16 +17,13 @@ class Order extends Model
 
     protected $fillable = [
         'user_id',
-        'payment_id',
         'status',
         'pickup_delivery_date_time',
-        'total_amount'
+        'payment_method',
+        'total_amount',
     ];
 
-    public function payment()
-    {
-        return $this->belongsTo(Payment::class);
-    }
+
  
 
     public function user(){

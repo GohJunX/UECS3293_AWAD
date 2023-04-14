@@ -68,40 +68,7 @@
                        <input class="form-control" type="date" id="delivery_date" name="delivery_date" required>
                       </div>
                       
-
-
-
-
-                    <!-- <div class="half-form">
-                        <div class="form-group1">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}" required>
-                        </div>
-                        <div class="form-group1">
-                            <label for="province">Province</label>
-                            <input type="text" class="form-control" id="province" name="province" value="{{ old('province') }}" required>
-                        </div>
-                    </div> 
-
-                    <div class="half-form">
-                        <div class="form-group1">
-                            <label for="postalcode">Postal Code</label>
-                            <input type="text" class="form-control" id="postalcode" name="postalcode" value="{{ old('postalcode') }}" required>
-                        </div>
-                        <div class="form-group1">
-                            <label for="phone">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required>
-                        </div>
-                    </div>  -->
-
                     <div class="spacer"></div>
-
-
-
-
-
-
-
                     
                        <label for="payment_method">Payment Method:</label>
 
@@ -110,7 +77,7 @@
         <input type="radio" name="payment_method" value="cash" onclick="hideCreditCardFields()"  required> Cash
     </label><br>
     <label>
-        <input type="radio" name="payment_method" value="credit_card" onclick="showCreditCardFields()" required> Credit Card
+        <input type="radio" name="payment_method" value="credit card" onclick="showCreditCardFields()" required> Credit Card
     </label>
 </div>
 
