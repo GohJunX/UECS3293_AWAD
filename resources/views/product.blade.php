@@ -2,21 +2,20 @@
 @section('content')
 
 <div style="display: flex; justify-content: center;">
-    <div class="container" style="margin-top:100px">
-        <h1>{{ $product->name }}</h1><br>
-        <p>{{ $product->description }}</p><br>
-        <p>Price: ${{ $product->price }}</p><br>
+    <div class="container" >
+        <h1>{{ $product->name }}</h1>
+        <p>{{ $product->description }}</p>
+        <p>Price: ${{ $product->price }}</p>
         <div style="display: flex; justify-content: center;">
             <img src="{{ asset('image/' . $product->name . '.jpg') }}" alt="{{ $product->name }}" width="300">
         </div>
-        <form method="post" action="{{route('user.product.store',$product->id)}}">
+        <form method="POST" action="{{ route('cart.addToCart') }}">
             @csrf
-            
-            <div style="display: flex; justify-content: center; margin-top:20px;">
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="price" value="{{ $product->price }}">
-            <input type="hidden" name="order_id" value="">
-            <input type="text" name="quantity" placeholder="How many you want?" value=1>
+            <input type="hidden" name="order_id" value="{{ auth()->user()->orders()->where('order_status', 'pending')->where('user_id', auth()->user()->id)->first()->id ?? '' }}">
+            <div style="display: flex; justify-content: center; margin-top:20px;">
+            <input type="number" name="quantity" placeholder="How many you want?">
             </div>
             <div style="display: flex; justify-content: center;">
                 <button type="submit">Add to Cart</button>

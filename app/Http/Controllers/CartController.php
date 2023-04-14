@@ -64,4 +64,19 @@ class CartController extends Controller
             'total' => $total
         ]);
     }    
+    public function addToCart(Request $request){
+        $product=OrderItem::create([
+            'quantity' => $request->quantity,
+            'order_id' => $request->order_id,
+            'product_id' => $request->product_id,
+        ]);
+        $product->save();
+        return redirect()->route('cart')->with('success', 'Product has been put in shopping cart!');
+    }
+    function deleteItem($id)
+    {
+        $data = OrderItem::find($id);
+        $data->delete();
+        return redirect("cart");
+    }
 }

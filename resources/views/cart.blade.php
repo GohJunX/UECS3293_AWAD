@@ -65,6 +65,7 @@ p {
           <th>Quantity</th>
           <th>Price</th>
           <th>Total</th>
+          <th>Operation</th>
         </tr>
       </thead>
       <tbody>
@@ -74,6 +75,7 @@ p {
           <td>{{ $item->quantity }}</td>
           <td>{{ $item->product->price }}</td>
           <td>{{ $item->quantity * $item->product->price }}</td>
+          <td><a href="{{ url('deleteItem/'.$item->id) }}">Remove</a></td>
         </tr>
         @endforeach
       </tbody>
